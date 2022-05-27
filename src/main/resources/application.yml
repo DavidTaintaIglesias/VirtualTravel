@@ -1,0 +1,25 @@
+spring:
+
+  application:
+    name: ejercicioFinal
+
+  output:
+    ansi:
+      enabled: always
+
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/VirtualTravel
+    username: user
+    password: password
+
+  driver:
+    class: name:com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+
+
+maxPersonOnBus: 40 #Max person on each bus
