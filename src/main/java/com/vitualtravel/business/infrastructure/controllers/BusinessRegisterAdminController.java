@@ -1,6 +1,6 @@
 package com.vitualtravel.business.infrastructure.controllers;
 
-import com.vitualtravel.business.application.BusinessRegisterAdminService;
+import com.vitualtravel.business.application.service.BusinessRegisterAdminService;
 import com.vitualtravel.business.infrastructure.controllers.dto.input.BusinessAdminInputDTO;
 import com.vitualtravel.business.infrastructure.controllers.dto.output.BusinessAdminOutputDTO;
 import io.swagger.annotations.Api;

@@ -1,4 +1,4 @@
-package com.vitualtravel.business.application;
+package com.vitualtravel.business.application.service;
 
 import com.vitualtravel.business.domain.entity.BusinessAdmin;
 import com.vitualtravel.business.infrastructure.controllers.dto.input.BusinessAdminInputDTO;
