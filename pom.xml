@@ -44,7 +44,6 @@
 		</dependency>
 
 		<!-- Spring security -->
-		<!--
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
@@ -55,16 +54,13 @@
 			<artifactId>thymeleaf-extras-springsecurity4</artifactId>
 			<version>3.0.3.RELEASE</version>
 		</dependency>
-		-->
 
 		<!--jsonwebtoken -->
-		<!--
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt</artifactId>
 			<version>0.9.1</version>
 		</dependency>
-		-->
 
 		<!-- Test -->
 		<dependency>
