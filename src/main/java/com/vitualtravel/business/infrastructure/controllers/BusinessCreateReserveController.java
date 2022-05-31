@@ -23,7 +23,7 @@ public class BusinessCreateReserveController {
     @PostMapping("/reserve")
     public ResponseEntity<BusinessReserveOutputDTO> createReserve (@Valid @RequestBody BusinessReserveInputDTO reserveInput) {
 
-        return new ResponseEntity<>(businessCreateReserveService.createReserve(reserveInput), HttpStatus.CREATED);
+        return new ResponseEntity<>(new BusinessReserveOutputDTO(businessCreateReserveService.createReserve(reserveInput)), HttpStatus.CREATED);
     }
 
 

@@ -21,11 +21,10 @@ public class WebCreateReserveControler {
     WebCreateReserveService createReserveService;
 
     @PostMapping("/webReserve")
-    public ResponseEntity<WebReserveOutputDTO> postReserve (@Valid @RequestBody WebReserveInputDTO reserveInputDTO){
+    public void postReserve (@Valid @RequestBody WebReserveInputDTO reserveInputDTO){
 
         //if(bindingResult.hasErrors()){ -> Clase BindingResult
         //Esta funcion comprueba si hay errores en mi codigo
         //En caso de ser true ejecuta el codigo, si no hay errores continua con el código
-        return new ResponseEntity<>(new WebReserveOutputDTO(createReserveService.createReserve(reserveInputDTO)), HttpStatus.CREATED);
     }
 }
