@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
 
 @RestController
-@Api(tags = "Business")
+@Api(tags = "Admin")
 public class BusinessRegisterAdminController {
 
     @Autowired
