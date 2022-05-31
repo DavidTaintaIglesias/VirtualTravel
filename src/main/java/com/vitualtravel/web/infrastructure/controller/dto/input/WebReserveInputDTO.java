@@ -16,30 +16,30 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class WebReserveInputDTO {
 
-    @NotNull
+    @NotNull(message = "departure cannot be null")
     private DeparturesEnum departure;
 
-    @NotNull
+    @NotNull(message = "arrival cannot be null")
     private ArrivalsEnum arrival;
 
-    @NotNull
+    @NotNull(message = "name cannot be null")
     private String name;
 
-    @NotNull
+    @NotNull(message = "surname cannot be null")
     private String surname;
 
-    @NotNull
+    @NotNull(message = "telphone cannot be null")
     @Min(value = 600000000, message = "Must be a valid telephone")
     @Max(value = 799999999, message = "Must be a valid telephone")
     private String tel;
 
-    @NotNull
-    @Email
+    @NotNull(message = "email cannot be null")
+    @Email(message = "Must be a valid email")
     private String email;
 
-    @NotNull
+    @NotNull(message = "date cannot be null")
     private LocalDate date;
 
-    @NotNull
+    @NotNull(message = "travelHour cannot be null")
     private DepartureHoursEnum travelHour;
 }
