@@ -8,4 +8,7 @@ import java.util.List;
 public interface BusinessReserveRepository extends JpaRepository<BusinessReserve, Integer> {
 
     List<BusinessReserve> findByArrivalAndTravelHour(String arrival, String travelHour);
+    List<BusinessReserve> findByArrival (String arrival);
+    List<BusinessReserve> findByTravelHour(String travelHour);
+
 }
