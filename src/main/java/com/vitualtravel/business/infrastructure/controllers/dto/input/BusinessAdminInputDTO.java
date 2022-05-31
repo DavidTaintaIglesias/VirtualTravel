@@ -12,7 +12,7 @@ import javax.validation.constraints.NotNull;
 @Getter
 @Setter
 @NoArgsConstructor
-public class AdminInputDTO {
+public class BusinessAdminInputDTO {
 
     @NotNull(message = "user cannot be null")
     private String user;

@@ -1,7 +1,7 @@
 package com.vitualtravel.business.infrastructure.controllers.dto.output;
 
 
-import com.vitualtravel.business.domain.entity.Admin;
+import com.vitualtravel.business.domain.entity.BusinessAdmin;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -9,14 +9,14 @@ import lombok.Setter;
 @Setter
 @Getter
 @NoArgsConstructor
-public class AdminOutputDTO {
+public class BusinessAdminOutputDTO {
 
     private int id;
     private String user;
     private String tel;
     private String email;
 
-    public AdminOutputDTO(Admin admin) {
+    public BusinessAdminOutputDTO(BusinessAdmin admin) {
 
         setId(admin.getId());
         setUser(admin.getUser());

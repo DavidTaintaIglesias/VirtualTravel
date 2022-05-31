@@ -1,6 +1,6 @@
 package com.vitualtravel.business.domain.entity;
 
-import com.vitualtravel.business.infrastructure.controllers.dto.input.AdminInputDTO;
+import com.vitualtravel.business.infrastructure.controllers.dto.input.BusinessAdminInputDTO;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -13,7 +13,7 @@ import java.io.Serializable;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Admin implements Serializable {
+public class BusinessAdmin implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,7 +32,7 @@ public class Admin implements Serializable {
     @Column(name = "email")
     String email;
 
-    public Admin(AdminInputDTO inputDTO) {
+    public BusinessAdmin(BusinessAdminInputDTO inputDTO) {
 
         setUser(inputDTO.getUser());
         setPassword(inputDTO.getPassword());

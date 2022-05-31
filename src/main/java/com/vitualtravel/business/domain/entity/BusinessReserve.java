@@ -1,5 +1,6 @@
 package com.vitualtravel.business.domain.entity;
 
+import com.vitualtravel.business.infrastructure.controllers.dto.input.BusinessReserveInputDTO;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -43,5 +44,18 @@ public class BusinessReserve implements Serializable {
 
     @Column(name = "travel_hour")
     String travelHour;
+
+    public BusinessReserve (BusinessReserveInputDTO businessReserveInputDTO) {
+
+        setDeparture(businessReserveInputDTO.getDeparture().toString());
+        setArrival(businessReserveInputDTO.getArrival().toString());
+        setName(businessReserveInputDTO.getName());
+        setSurname(businessReserveInputDTO.getSurname());
+        setTel(businessReserveInputDTO.getTel());
+        setEmail(businessReserveInputDTO.getEmail());
+        setDate(businessReserveInputDTO.getDate());
+        setTravelHour(businessReserveInputDTO.getTravelHour().getHours());
+
+    }
 
 }
