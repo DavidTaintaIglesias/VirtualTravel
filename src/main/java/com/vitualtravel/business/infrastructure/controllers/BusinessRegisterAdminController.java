@@ -9,18 +9,20 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
 
 @RestController
+@RequestMapping("api/v0")
 @Api(tags = "Admin")
 public class BusinessRegisterAdminController {
 
     @Autowired
     BusinessRegisterAdminService registerAdminService;
 
-    @PostMapping("/register")
+    @PostMapping("/newAdmin")
     public ResponseEntity<BusinessAdminOutputDTO> registerAdmin(@Valid @RequestBody BusinessAdminInputDTO adminInputDTO) {
 
         return new ResponseEntity<>(registerAdminService.registerAdmin(adminInputDTO), HttpStatus.CREATED);

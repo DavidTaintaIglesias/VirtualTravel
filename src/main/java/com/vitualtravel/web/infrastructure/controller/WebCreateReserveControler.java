@@ -2,25 +2,24 @@ package com.vitualtravel.web.infrastructure.controller;
 
 import com.vitualtravel.web.application.services.WebCreateReserveService;
 import com.vitualtravel.web.infrastructure.controller.dto.input.WebReserveInputDTO;
-import com.vitualtravel.web.infrastructure.controller.dto.output.WebReserveOutputDTO;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
 
 @RestController
 @Api(tags = "Web")
+@RequestMapping("/api/v0")
 public class WebCreateReserveControler {
 
     @Autowired
     WebCreateReserveService createReserveService;
 
-    @PostMapping("/webReserve")
+    @PostMapping("/WebReserve")
     public void postReserve (@Valid @RequestBody WebReserveInputDTO reserveInputDTO){
 
         //if(bindingResult.hasErrors()){ -> Clase BindingResult
