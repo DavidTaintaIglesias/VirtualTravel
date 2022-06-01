@@ -1,5 +1,4 @@
 spring:
-
   application:
     name: ejercicioFinal
 
@@ -20,6 +19,17 @@ spring:
     hibernate:
       ddl-auto: update
     open-in-view: false
+
+  #mail:
+    #host: smtp.gmail.com
+    #port: 587
+    #username: david.tainta@bosonit.com
+    #password: dyUzB3Nu
+    #properties:
+      #mail:
+        #smtp:
+          #auth: true
+          #enable: true
 
 
 maxPersonOnBus: 40 #Max person on each bus
