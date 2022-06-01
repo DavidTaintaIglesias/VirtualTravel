@@ -16,8 +16,8 @@ public class BusinessCreateReserveService {
     @Autowired
     BusinessReserveRepository repository;
 
-//    @Autowired
-//    private JavaMailSender javaMailSender;
+    @Autowired
+    private JavaMailSender javaMailSender;
 
     @Value("${maxPersonOnBus}")
     int numberSits;
@@ -40,13 +40,13 @@ public class BusinessCreateReserveService {
         return businessReserve;
     }
 
-//    public void sendMail(String to, String body) {
-//
-//        SimpleMailMessage email = new SimpleMailMessage();
-//
-//        email.setTo(to);
-//        email.setText(body);
-//
-//        javaMailSender.send(email);
-//    }
+    public void sendMail(String to, String body) {
+
+        SimpleMailMessage email = new SimpleMailMessage();
+
+        email.setTo(to);
+        email.setText(body);
+
+        javaMailSender.send(email);
+    }
 }

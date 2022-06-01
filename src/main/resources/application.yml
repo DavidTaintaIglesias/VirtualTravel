@@ -20,16 +20,16 @@ spring:
       ddl-auto: update
     open-in-view: false
 
-  #mail:
-    #host: smtp.gmail.com
-    #port: 587
-    #username: david.tainta@bosonit.com
-    #password: *******
-    #properties:
-      #mail:
-        #smtp:
-          #auth: true
-          #enable: true
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: virtual.travel.exercise@gmail.com
+    password: bosonit1
+    properties:
+      mail:
+        smtp:
+          auth: true
+          enable: true
 
 
 maxPersonOnBus: 40 #Max person on each bus
