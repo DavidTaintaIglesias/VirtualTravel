@@ -24,7 +24,7 @@ spring:
     #host: smtp.gmail.com
     #port: 587
     #username: david.tainta@bosonit.com
-    #password: dyUzB3Nu
+    #password: mailPassword
     #properties:
       #mail:
         #smtp:
