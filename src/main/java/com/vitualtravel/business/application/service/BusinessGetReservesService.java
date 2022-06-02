@@ -40,25 +40,13 @@ public class BusinessGetReservesService {
         LocalDate dateMin;
         LocalDate dateMax;
 
-        if(hourMin==null) {
-            hourMin = BusinessDepartureHoursEnum.FIRST.getHours();
-        }
+        hourMin = hourMin == null ? BusinessDepartureHoursEnum.FIRST.getHours() : hourMin;
 
-        if(hourMax==null) {
-            hourMax = BusinessDepartureHoursEnum.LAST.getHours();
-        }
+        hourMax = hourMax == null ? BusinessDepartureHoursEnum.LAST.getHours() : hourMax;
 
-        if(minDate==null) {
-            dateMin = LocalDate.now();
-        } else {
-            dateMin = LocalDate.parse(minDate);
-        }
+        dateMin = minDate == null ? LocalDate.now() : LocalDate.parse(minDate);
 
-        if(maxDate==null){
-            dateMax = LocalDate.now().plusWeeks(1);
-        } else {
-            dateMax = LocalDate.parse(maxDate);
-        }
+        dateMax = maxDate == null ? LocalDate.now().plusWeeks(1) : LocalDate.parse(maxDate);
 
         return repository.findByArrivalAndDateBetweenAndTravelHourBetween(arrival, dateMin, dateMax, hourMin, hourMax);
     }

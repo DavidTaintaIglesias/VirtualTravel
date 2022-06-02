@@ -33,8 +33,8 @@ public class BusinessCreateReserveService {
 
         repository.save(businessReserve);
 
-//        String mailReserve = "Su reserva para el viaje "+businessReserve.getDeparture()+"-"+businessReserve.getArrival()
-//                +" a las: "+businessReserve.getTravelHour()+" se ha realizado con exito.\nSu Id de reserva es: "+businessReserve.getId();
+//        Convertir los mails en entidad para tener un repo donde guardarlos para su posterior comprobacion
+//        String mailReserve = BusinessMailReserve.toString();
 //        sendMail(businessReserve.getEmail(), mailReserve);
 
         return businessReserve;
