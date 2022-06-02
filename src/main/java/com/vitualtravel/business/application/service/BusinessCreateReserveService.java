@@ -27,7 +27,7 @@ public class BusinessCreateReserveService {
         //Añadir limitacion de asientos por trayecto
         BusinessReserve businessReserve = new BusinessReserve(businessReserveInputDTO);
 
-        if(repository.findByArrivalAndTravelHour(businessReserve.getArrival(), businessReserve.getTravelHour()).stream().count()==numberSits){
+        if(repository.findByDepartureAndArrivalAndTravelHour(businessReserve.getDeparture(), businessReserve.getArrival(), businessReserve.getTravelHour()).stream().count()==numberSits){
             throw new Unprocessable("Sorry, bus completed");
         }
 

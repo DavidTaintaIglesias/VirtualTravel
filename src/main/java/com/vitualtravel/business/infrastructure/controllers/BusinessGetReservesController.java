@@ -24,27 +24,22 @@ public class BusinessGetReservesController {
         return new ResponseEntity<>(getReservesService.getAllReserves().stream().map(BusinessReserveOutputDTO::new).toList(), HttpStatus.OK);
     }
 
-    @GetMapping("/getReservesByTrip")
-    public ResponseEntity<List<BusinessReserveOutputDTO>> getReservesByTrip(@RequestParam(required = false) String arrival, @RequestParam(required = false) String travelHour) {
+    @GetMapping("/getReservesByTrip/{departure}")
+    public ResponseEntity<List<BusinessReserveOutputDTO>> getReservesByTrip(@PathVariable String departure,
+                                                                            @RequestParam(required = false) String arrival,
+                                                                            @RequestParam(required = false) String travelHour) {
 
-        if(travelHour==null){
-            return new ResponseEntity<>(getReservesService.getReservesByArrival(arrival).stream().map(BusinessReserveOutputDTO::new).toList(), HttpStatus.OK);
-        }
-
-        if(arrival==null){
-            return new ResponseEntity<>(getReservesService.getReservesByTravelHour(travelHour).stream().map(BusinessReserveOutputDTO::new).toList(), HttpStatus.OK);
-        }
-
-        return new ResponseEntity<>(getReservesService.getReservesByTrip(arrival, travelHour).stream().map(BusinessReserveOutputDTO::new).toList(), HttpStatus.OK);
+        return new ResponseEntity<>(getReservesService.getReservesByTrip(departure, arrival, travelHour).stream().map(BusinessReserveOutputDTO::new).toList(), HttpStatus.OK);
     }
 
-    @GetMapping("/getFilteredReserves/{arrival}")
+    @GetMapping("/getFilteredReserves/{departure}/{arrival}")
     public ResponseEntity<List<BusinessReserveOutputDTO>> getFilteredReserves(@PathVariable String arrival,
+                                                                              @PathVariable String departure,
                                                                               @RequestParam(required = false) String minDate,
                                                                               @RequestParam(required = false) String maxDate,
                                                                               @RequestParam(required = false) String hourMin,
                                                                               @RequestParam(required = false) String hourMax) {
 
-        return new ResponseEntity<>(getReservesService.getFilteredReserves(arrival, minDate, maxDate, hourMin, hourMax).stream().map(BusinessReserveOutputDTO::new).toList(), HttpStatus.OK);
+        return new ResponseEntity<>(getReservesService.getFilteredReserves(departure, arrival, minDate, maxDate, hourMin, hourMax).stream().map(BusinessReserveOutputDTO::new).toList(), HttpStatus.OK);
     }
 }

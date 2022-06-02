@@ -20,22 +20,24 @@ public class BusinessGetReservesService {
         return repository.findAll();
     }
 
-    public List<BusinessReserve> getReservesByTrip(String arrival, String travelHour) {
+    public List<BusinessReserve> getReservesByTrip(String departure, String arrival, String travelHour) {
 
-        return repository.findByArrivalAndTravelHour(arrival, travelHour);
+        if(arrival==null && travelHour== null) {
+            return repository.findByDeparture(departure);
+        }
+
+        if(arrival==null){
+            return repository.findByDepartureAndTravelHour(departure, travelHour);
+        }
+
+        if(travelHour==null){
+            return repository.findByDepartureAndArrival(departure, arrival);
+        }
+
+        return repository.findByDepartureAndArrivalAndTravelHour(departure, arrival, travelHour);
     }
 
-    public List<BusinessReserve> getReservesByArrival(String arrival) {
-
-        return repository.findByArrival(arrival);
-    }
-
-    public List<BusinessReserve> getReservesByTravelHour(String travelHour) {
-
-        return repository.findByTravelHour(travelHour);
-    }
-
-    public List<BusinessReserve> getFilteredReserves(String arrival, String minDate, String maxDate, String hourMin, String hourMax) {
+    public List<BusinessReserve> getFilteredReserves(String departure, String arrival, String minDate, String maxDate, String hourMin, String hourMax) {
 
         LocalDate dateMin;
         LocalDate dateMax;
@@ -48,6 +50,6 @@ public class BusinessGetReservesService {
 
         dateMax = maxDate == null ? LocalDate.now().plusWeeks(1) : LocalDate.parse(maxDate);
 
-        return repository.findByArrivalAndDateBetweenAndTravelHourBetween(arrival, dateMin, dateMax, hourMin, hourMax);
+        return repository.findByDepartureAndArrivalAndDateBetweenAndTravelHourBetween(departure, arrival, dateMin, dateMax, hourMin, hourMax);
     }
 }
