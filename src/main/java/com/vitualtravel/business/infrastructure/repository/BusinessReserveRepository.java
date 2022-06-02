@@ -11,6 +11,6 @@ public interface BusinessReserveRepository extends JpaRepository<BusinessReserve
     List<BusinessReserve> findByArrivalAndTravelHour(String arrival, String travelHour);
     List<BusinessReserve> findByArrival (String arrival);
     List<BusinessReserve> findByTravelHour(String travelHour);
-    List<BusinessReserve> findByDateBetweenAndTravelHourBetween(LocalDate dateMin, LocalDate dateMax, String hourMin, String hourMax);
+    List<BusinessReserve> findByArrivalAndDateBetweenAndTravelHourBetween(String arrival, LocalDate dateMin, LocalDate dateMax, String hourMin, String hourMax);
 
 }

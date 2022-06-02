@@ -7,10 +7,7 @@ import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -43,12 +40,13 @@ public class BusinessGetReservesController {
         return new ResponseEntity<>(getReservesService.getReservesByTrip(arrival, travelHour).stream().map(BusinessReserveOutputDTO::new).toList(), HttpStatus.OK);
     }
 
-    @GetMapping("/getFilteredReserves")
-    public ResponseEntity<List<BusinessReserveOutputDTO>> getFilteredReserves(@RequestParam(required = false) String minDate,
+    @GetMapping("/getFilteredReserves/{arrival}")
+    public ResponseEntity<List<BusinessReserveOutputDTO>> getFilteredReserves(@PathVariable String arrival,
+                                                                              @RequestParam(required = false) String minDate,
                                                                               @RequestParam(required = false) String maxDate,
                                                                               @RequestParam(required = false) String hourMin,
                                                                               @RequestParam(required = false) String hourMax) {
 
-        return new ResponseEntity<>(getReservesService.getFilteredReserves(minDate, maxDate, hourMin, hourMax).stream().map(BusinessReserveOutputDTO::new).toList(), HttpStatus.OK);
+        return new ResponseEntity<>(getReservesService.getFilteredReserves(arrival, minDate, maxDate, hourMin, hourMax).stream().map(BusinessReserveOutputDTO::new).toList(), HttpStatus.OK);
     }
 }

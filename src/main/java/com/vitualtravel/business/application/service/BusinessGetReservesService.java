@@ -35,7 +35,7 @@ public class BusinessGetReservesService {
         return repository.findByTravelHour(travelHour);
     }
 
-    public List<BusinessReserve> getFilteredReserves(String minDate, String maxDate, String hourMin, String hourMax) {
+    public List<BusinessReserve> getFilteredReserves(String arrival, String minDate, String maxDate, String hourMin, String hourMax) {
 
         LocalDate dateMin;
         LocalDate dateMax;
@@ -60,6 +60,6 @@ public class BusinessGetReservesService {
             dateMax = LocalDate.parse(maxDate);
         }
 
-        return repository.findByDateBetweenAndTravelHourBetween(dateMin, dateMax, hourMin, hourMax);
+        return repository.findByArrivalAndDateBetweenAndTravelHourBetween(arrival, dateMin, dateMax, hourMin, hourMax);
     }
 }
