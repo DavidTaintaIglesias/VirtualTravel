@@ -47,14 +47,14 @@ public class BusinessReserve implements Serializable {
 
     public BusinessReserve (BusinessReserveInputDTO businessReserveInputDTO) {
 
-        setDeparture(businessReserveInputDTO.getDeparture().toString());
-        setArrival(businessReserveInputDTO.getArrival().toString());
-        setName(businessReserveInputDTO.getName());
-        setSurname(businessReserveInputDTO.getSurname());
-        setTel(businessReserveInputDTO.getTel());
-        setEmail(businessReserveInputDTO.getEmail());
-        setDate(businessReserveInputDTO.getDate());
-        setTravelHour(businessReserveInputDTO.getTravelHour().getHours());
+        setDeparture(businessReserveInputDTO.departure().toString());
+        setArrival(businessReserveInputDTO.arrival().toString());
+        setName(businessReserveInputDTO.name());
+        setSurname(businessReserveInputDTO.surname());
+        setTel(businessReserveInputDTO.tel());
+        setEmail(businessReserveInputDTO.email());
+        setDate(businessReserveInputDTO.date());
+        setTravelHour(businessReserveInputDTO.travelHour().getHours());
 
     }
 

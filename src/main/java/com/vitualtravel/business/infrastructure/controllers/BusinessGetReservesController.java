@@ -1,7 +1,6 @@
 package com.vitualtravel.business.infrastructure.controllers;
 
 import com.vitualtravel.business.application.service.BusinessGetReservesService;
-import com.vitualtravel.business.domain.entity.BusinessDepartureHoursEnum;
 import com.vitualtravel.business.infrastructure.controllers.dto.output.BusinessReserveOutputDTO;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +8,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDate;
 import java.util.List;
 
 @RestController

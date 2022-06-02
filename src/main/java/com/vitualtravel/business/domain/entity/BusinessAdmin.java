@@ -34,10 +34,10 @@ public class BusinessAdmin implements Serializable {
 
     public BusinessAdmin(BusinessAdminInputDTO inputDTO) {
 
-        setUser(inputDTO.getUser());
-        setPassword(inputDTO.getPassword());
-        setTel(inputDTO.getTel());
-        setEmail(inputDTO.getEmail());
+        setUser(inputDTO.user());
+        setPassword(inputDTO.password());
+        setTel(inputDTO.tel());
+        setEmail(inputDTO.email());
     }
 
 }
