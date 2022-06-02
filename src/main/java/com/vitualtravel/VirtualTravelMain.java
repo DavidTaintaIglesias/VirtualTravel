@@ -23,7 +23,8 @@ public class VirtualTravelMain extends WebSecurityConfigurerAdapter {
 				.csrf().disable()
 				.addFilterAfter(new BusinessJWTAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class)
 				.authorizeRequests()
-				.antMatchers("/api/v0/newAdmin","/api/v0/getAllReserves", "/api/v0/getReservesByTrip").hasRole("ADMIN")//IMPORTANTE!! Nombre del rol sin ROLE_
+				.antMatchers("/api/v0/newAdmin","/api/v0/getAllReserves",
+						"/api/v0/getReservesByTrip", "/api/v0/getFilteredReserves").hasRole("ADMIN")//IMPORTANTE!! Nombre del rol sin ROLE_
 				.antMatchers(HttpMethod.GET).permitAll()
 				.antMatchers(HttpMethod.POST).permitAll()
 				.anyRequest().authenticated();
