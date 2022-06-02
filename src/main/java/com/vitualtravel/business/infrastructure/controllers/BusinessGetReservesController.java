@@ -24,14 +24,6 @@ public class BusinessGetReservesController {
         return new ResponseEntity<>(getReservesService.getAllReserves().stream().map(BusinessReserveOutputDTO::new).toList(), HttpStatus.OK);
     }
 
-    @GetMapping("/getReservesByTrip/{departure}")
-    public ResponseEntity<List<BusinessReserveOutputDTO>> getReservesByTrip(@PathVariable String departure,
-                                                                            @RequestParam(required = false) String arrival,
-                                                                            @RequestParam(required = false) String travelHour) {
-
-        return new ResponseEntity<>(getReservesService.getReservesByTrip(departure, arrival, travelHour).stream().map(BusinessReserveOutputDTO::new).toList(), HttpStatus.OK);
-    }
-
     @GetMapping("/getFilteredReserves/{departure}/{arrival}")
     public ResponseEntity<List<BusinessReserveOutputDTO>> getFilteredReserves(@PathVariable String arrival,
                                                                               @PathVariable String departure,

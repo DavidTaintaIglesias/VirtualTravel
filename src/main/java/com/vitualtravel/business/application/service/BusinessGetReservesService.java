@@ -20,23 +20,6 @@ public class BusinessGetReservesService {
         return repository.findAll();
     }
 
-    public List<BusinessReserve> getReservesByTrip(String departure, String arrival, String travelHour) {
-
-        if(arrival==null && travelHour== null) {
-            return repository.findByDeparture(departure);
-        }
-
-        if(arrival==null){
-            return repository.findByDepartureAndTravelHour(departure, travelHour);
-        }
-
-        if(travelHour==null){
-            return repository.findByDepartureAndArrival(departure, arrival);
-        }
-
-        return repository.findByDepartureAndArrivalAndTravelHour(departure, arrival, travelHour);
-    }
-
     public List<BusinessReserve> getFilteredReserves(String departure, String arrival, String minDate, String maxDate, String hourMin, String hourMax) {
 
         LocalDate dateMin;
