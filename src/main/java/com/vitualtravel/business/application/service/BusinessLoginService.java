@@ -6,6 +6,7 @@ import com.vitualtravel.shared.exceptions.NotFound;
 import com.vitualtravel.shared.exceptions.Unprocessable;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
@@ -27,6 +28,7 @@ public class BusinessLoginService {
         BusinessAdmin admin = repository.findByUser(user).orElseThrow(()-> new NotFound("User not found"));
 
         String password = admin.getPassword();
+        pass = DigestUtils.sha256Hex(pass);
 
         if(!pass.equals(password)){
             throw new Unprocessable("Wrong password");
